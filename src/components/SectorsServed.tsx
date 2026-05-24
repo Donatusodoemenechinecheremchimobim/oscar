@@ -6,7 +6,8 @@
 import React, { useState } from 'react';
 import { IndustrySector } from '../types';
 import { INDUSTRY_SECTORS } from '../data';
-import { ShieldAlert, Compass, ChevronRight, Activity, ArrowRight, CheckCircle } from 'lucide-react';
+import { ShieldAlert, Compass, ChevronRight, Activity, ArrowRight, CheckCircle, Search } from 'lucide-react';
+import { enlargeImage } from './Lightbox';
 
 interface SectorsServedProps {
   onSelectSectorProducts: (categoryId: string) => void;
@@ -129,13 +130,24 @@ export default function SectorsServed({ onSelectSectorProducts, onInitiateQuoteF
 
                 <div className="lg:col-span-4 flex flex-col justify-between space-y-3">
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">Logistics & Asset Visual</h4>
-                  <div className="relative aspect-[16/9] lg:aspect-auto flex-grow w-full overflow-hidden rounded-sm border border-slate-200 shadow-sm bg-slate-100 minima-img">
+                  <div 
+                    onClick={() => enlargeImage(selectedSector.imageUrl, selectedSector.title, selectedSector.description || 'Verified site equipment serving primary processing networks.', 'SECTOR SITE BRIEFING')}
+                    className="group relative aspect-[16/9] lg:aspect-auto flex-grow w-full overflow-hidden rounded-sm border border-slate-200 shadow-sm bg-slate-100 minima-img cursor-zoom-in"
+                    title="Click to Zoom Context Visual"
+                  >
                     <img
                       src={selectedSector.imageUrl}
                       alt={selectedSector.title}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300 min-h-[140px] max-h-[220px] lg:max-h-none"
+                      className="w-full h-full object-cover grayscale-[15%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300 min-h-[140px] max-h-[220px] lg:max-h-none"
                     />
+                    {/* Hover lens */}
+                    <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[9px] font-mono tracking-widest uppercase px-2.1 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                        <Search className="w-3.5 h-3.5" />
+                        <span>Zoom</span>
+                      </div>
+                    </div>
                     <div className="absolute bottom-2.5 left-2.5 bg-slate-900/90 backdrop-blur-xs text-[8px] font-mono font-bold uppercase tracking-widest text-orange-400 px-2 py-1 rounded-sm">
                       Verified Site View
                     </div>
@@ -201,80 +213,124 @@ export default function SectorsServed({ onSelectSectorProducts, onInitiateQuoteF
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/IMG-20260522-WA0000.jpg', 'Offshore Drilling Rig', 'Maritime exploration platform drawing sweet crude and gas from subsea wellhead lines.', 'SITED FIELD ASSETS')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/IMG-20260522-WA0000.jpg"
                   alt="Offshore Drilling Wellhead"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3.5 h-3.5" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   FLD-LGT // 01
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Offshore Drilling Rig</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Offshore Drilling Rig</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Marine rigs operating in maritime exploration zones carrying deep wellheads.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/IMG-20260522-WA0001.jpg', 'Gas Dehydration Towers', 'Midstream molecular sieve beds and dehydration processing columns managing water-dewpoint limits.', 'SITED FIELD ASSETS')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/IMG-20260522-WA0001.jpg"
                   alt="LNG Compressors Dehydration"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3.5 h-3.5" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   FLD-LGT // 02
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Gas Dehydration Towers</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Gas Dehydration Towers</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Molecular sieve and glycol contactors running midstream gas processing workflows.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/IMG-20260522-WA0002.jpg', 'Oil Refining Columns', 'High fraction columns processing upstream crude compounds into downstream petroleum fractions.', 'SITED FIELD ASSETS')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/IMG-20260522-WA0002.jpg"
                   alt="Refining Fractionation Column"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3.5 h-3.5" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   FLD-LGT // 03
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Oil Refining Columns</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Oil Refining Columns</h5>
                 <p className="text-[10px] text-slate-405 leading-normal font-light">
                   High fraction towers and refinery vessels splitting petroleum raw feeds.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/filtration.jpg', 'Wastewater Clarifier Basin', 'Sedimentation tanks operating dynamic flocculant coagulating and particulate settlement loops.', 'SITED FIELD ASSETS')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/filtration.jpg"
                   alt="Clarifier Settlement Pool"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3.5 h-3.5" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   FLD-LGT // 04
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Wastewater Clarifier Basin</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Wastewater Clarifier Basin</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Flocculating and sedimentation basins running automated sludge-splitting cycles.
                 </p>

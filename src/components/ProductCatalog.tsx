@@ -7,6 +7,7 @@ import React, { useState, useMemo } from 'react';
 import { ProductItem, ProductCategory } from '../types';
 import { PRODUCT_CATEGORIES } from '../data';
 import { Search, Filter, HelpCircle, FileCheck, RefreshCw, Layers, Plus, BookOpen, AlertCircle } from 'lucide-react';
+import { enlargeImage } from './Lightbox';
 
 interface ProductCatalogProps {
   initialCategoryId?: string;
@@ -321,80 +322,124 @@ export default function ProductCatalog({ initialCategoryId, onSelectProductForQu
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/blue_pallet.jpg', 'Desiccant Bead Reserves', 'Molecular sieve 3A/4A desiccant units and active silica gas beads arranged on shipping grids in the weatherproof staging area.', 'STAGED RESERVES')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/blue_pallet.jpg"
                   alt="Packed Boxes on Blue Pallets"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   STK-VAL // 01
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Desiccant Bead Reserves</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Desiccant Bead Reserves</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Silica gas beads and molecular sieve units stored in moisture-locked cargo boxes.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/pic12.jpg', 'Moisture-Locked Wraps & Marine Container Logistics', 'Bulk bags sealed with high-density chemical shrink-wrapping layers to guard against sea moisture prior to marine dispatch.', 'LOGISTICS CONTAINER')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/pic12.jpg"
                   alt="Container logistics derrick"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   STK-VAL // 02
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Moisture-Locked Wraps</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Moisture-Locked Wraps</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Bulk compounds sealed tightly with heavy chemical shrink-wrapping layers prior to marine dispatch.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/pic13.jpg', 'Staged Liquid Polymers', 'General stock distribution pallets holding liquid chemical polymers and process coagulants ready for refinery pipeline dispatch.', 'CHEMICAL RESERVES')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/pic13.jpg"
                   alt="Industrial Blue Chemical Drums on Pallets"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   STK-VAL // 03
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Staged Liquid Polymers</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Staged Liquid Polymers</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Liquid process coagulants and polymers arranged on pallets in general stockpiles.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/sand.jpg', 'Deep-Bed Sand Filtration Systems', 'Vetted filtration bed sand with anthracite, backed by active mechanical pumps and control manifold infrastructure for refinery treatment loops.', 'FILTRATION PLOTS')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/sand.jpg"
                   alt="Piping filters installation"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   STK-VAL // 04
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Deep-Bed Media Filters</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Deep-Bed Media Filters</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Process manifolds and mechanical pumps regulating sand/anthracite bed filtration.
                 </p>

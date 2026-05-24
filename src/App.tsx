@@ -13,6 +13,7 @@ import OperatingModel from './components/OperatingModel';
 import SourcingGallery from './components/SourcingGallery';
 import QuotationSystem from './components/QuotationSystem';
 import ContactDesk from './components/ContactDesk';
+import Lightbox from './components/Lightbox';
 import { PRODUCT_CATEGORIES } from './data';
 import { Globe, Droplet, Search, X, FileText, ArrowRight, ShieldCheck, Mail, Phone, ExternalLink } from 'lucide-react';
 
@@ -330,6 +331,9 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* Global Enlarge Lightbox Overlay popup */}
+      <Lightbox />
 
     </div>
   );

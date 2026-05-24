@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Truck, ArrowRight, Search, FlaskConical, ChevronLeft, ChevronRight, Activity, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { enlargeImage } from './Lightbox';
 
 interface HeroProps {
   onNavToTab: (tab: string) => void;
@@ -185,7 +186,11 @@ export default function Hero({ onNavToTab }: HeroProps) {
             </div>
 
             {/* Framer Motion Sourcing Carousel */}
-            <div className="relative aspect-video sm:aspect-[4/3] lg:aspect-square w-full rounded-sm border border-slate-200 overflow-hidden bg-slate-950 shadow-md group">
+            <div 
+              onClick={() => enlargeImage(HERO_IMAGES[carouselIdx].url, HERO_IMAGES[carouselIdx].title, HERO_IMAGES[carouselIdx].desc, HERO_IMAGES[carouselIdx].tag)}
+              className="relative aspect-video sm:aspect-[4/3] lg:aspect-square w-full rounded-sm border border-slate-200 overflow-hidden bg-slate-950 shadow-md group cursor-zoom-in"
+              title="Click/Tap to Enlarge Photograph"
+            >
               <AnimatePresence initial={false} mode="wait">
                 <motion.img
                   key={carouselIdx}
@@ -196,25 +201,31 @@ export default function Hero({ onNavToTab }: HeroProps) {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -direction * 50 }}
                   transition={{ duration: 0.4, ease: 'easeInOut' }}
-                  className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale-[10%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-500"
                 />
               </AnimatePresence>
 
               {/* Bottom Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
 
+              {/* Instant Zoom Banner Indicator on Hover */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-950/80 px-3 py-2 border border-orange-500/40 text-orange-400 font-mono text-[9px] uppercase tracking-widest rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg pointer-events-none flex items-center space-x-1">
+                <Search className="w-3.5 h-3.5" />
+                <span>Tap to Zoom Image</span>
+              </div>
+
               {/* Carousel controls */}
               <div className="absolute inset-x-2 top-1/2 -translate-y-1/2 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none">
                 <button
-                  onClick={handlePrevImage}
-                  className="w-8 h-8 rounded-sm bg-slate-950/90 border border-slate-800 hover:border-orange-500 text-white hover:text-orange-400 flex items-center justify-center cursor-pointer transition-all pointer-events-auto shadow-lg"
+                  onClick={(e) => { e.stopPropagation(); handlePrevImage(e); }}
+                  className="w-8 h-8 rounded-sm bg-slate-950/90 border border-slate-805 hover:border-orange-500 text-white hover:text-orange-400 flex items-center justify-center cursor-pointer transition-all pointer-events-auto shadow-lg"
                   title="Previous Asset"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={handleNextImage}
-                  className="w-8 h-8 rounded-sm bg-slate-950/90 border border-slate-800 hover:border-orange-500 text-white hover:text-orange-400 flex items-center justify-center cursor-pointer transition-all pointer-events-auto shadow-lg"
+                  onClick={(e) => { e.stopPropagation(); handleNextImage(e); }}
+                  className="w-8 h-8 rounded-sm bg-slate-950/90 border border-slate-805 hover:border-orange-500 text-white hover:text-orange-400 flex items-center justify-center cursor-pointer transition-all pointer-events-auto shadow-lg"
                   title="Next Asset"
                 >
                   <ChevronRight className="w-4 h-4" />

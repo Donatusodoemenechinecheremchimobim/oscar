@@ -4,8 +4,9 @@
  */
 
 import React from 'react';
-import { Shield, Sparkles, Building2, MapPin, Globe, CheckCircle2, Award, Zap } from 'lucide-react';
+import { Shield, Sparkles, Building2, MapPin, Globe, CheckCircle2, Award, Zap, Search } from 'lucide-react';
 import { OFFICE_LOCATIONS } from '../data';
+import { enlargeImage } from './Lightbox';
 
 export default function AboutUs() {
   const functionalRoles = [
@@ -44,13 +45,24 @@ export default function AboutUs() {
 
         {/* Sourced Operational Assets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-          <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm">
+          <div 
+            onClick={() => enlargeImage('/pic12.jpg', 'TDS Technical Feasibility Vetting', 'Vetting chemical structures, TDS certifications, and spec tolerances beforehand in Quality Vetting Laboratory.', 'SPECS ANALYSIS')}
+            className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm cursor-zoom-in"
+            title="Click to Zoom Photo"
+          >
             <img
               src="/pic12.jpg"
               alt="Quality Vetting Laboratory"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+              className="w-full h-full object-cover grayscale-[10%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
             />
+            {/* Hover lens */}
+            <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[9px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-xs flex items-center space-x-1 shadow-md">
+                <Search className="w-3.5 h-3.5" />
+                <span>Zoom Photo</span>
+              </div>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
               <span className="text-[8px] font-mono font-extrabold tracking-widest text-orange-400 uppercase">STAGE 01 // SPECS ANALYSIS</span>
@@ -59,13 +71,24 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm">
+          <div 
+            onClick={() => enlargeImage('/blue_pallet.jpg', 'Bulk Compound Warehousing', 'Cardboard fiber container loads staged and strapped tightly onto heavy-duty blue industrial pallets.', 'STAGING & OPERATIONS')}
+            className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm cursor-zoom-in"
+            title="Click to Zoom Photo"
+          >
             <img
               src="/blue_pallet.jpg"
               alt="Warehouse packaging pallets"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+              className="w-full h-full object-cover grayscale-[10%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
             />
+            {/* Hover lens */}
+            <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[9px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-xs flex items-center space-x-1 shadow-md">
+                <Search className="w-3.5 h-3.5" />
+                <span>Zoom Photo</span>
+              </div>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
               <span className="text-[8px] font-mono font-extrabold tracking-widest text-orange-400 uppercase">STAGE 02 // STAGING</span>
@@ -74,13 +97,24 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm">
+          <div 
+            onClick={() => enlargeImage('/filtration.jpg', 'Refining & Water Treatment Supply', 'Dehydration glycols and high-grade sand filtration media loading and dispatch operations.', 'DISPATCH LOGISTICS')}
+            className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm cursor-zoom-in"
+            title="Click to Zoom Photo"
+          >
             <img
               src="/filtration.jpg"
               alt="Industrial filtration process water"
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+              className="w-full h-full object-cover grayscale-[10%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
             />
+            {/* Hover lens */}
+            <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[9px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-xs flex items-center space-x-1 shadow-md">
+                <Search className="w-3.5 h-3.5" />
+                <span>Zoom Photo</span>
+              </div>
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
               <span className="text-[8px] font-mono font-extrabold tracking-widest text-orange-400 uppercase">STAGE 03 // DISPATCH</span>
@@ -212,19 +246,30 @@ export default function AboutUs() {
                     {OFFICE_LOCATIONS.nigeria.focus}
                   </p>
                 </div>
-                <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-slate-150 mt-4 bg-slate-100">
+                <div 
+                  onClick={() => enlargeImage('/pic1.jpg', 'Port Harcourt Sourcing Hub & Terminal Logistics', 'State-of-the-art dispatch terminal with high-integrity warehousing and weather-protected container loading in Port Harcourt.', 'NIGERIA HUB')}
+                  className="group relative aspect-video w-full overflow-hidden rounded-sm border border-slate-150 mt-4 bg-slate-100 cursor-zoom-in"
+                  title="Click to Zoom Photo"
+                >
                   <img
                     src="/pic1.jpg"
                     alt="Port Harcourt Sourcing Hub & Terminal Logistics"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-cover grayscale-[15%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                   />
+                  {/* Hover lens */}
+                  <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[9px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                      <Search className="w-3.5 h-3.5" />
+                      <span>Zoom</span>
+                    </div>
+                  </div>
                   <div className="absolute bottom-2 left-2 bg-slate-950/80 text-[8px] font-mono tracking-wider font-bold text-slate-300 px-2 py-0.5 rounded-sm shadow">
                     PH LOGISTICS TERMINAL
                   </div>
                 </div>
               </div>
-
+ 
               {/* Houston Desk */}
               <div className="bg-white p-5 rounded-sm border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
                 <div className="space-y-4">
@@ -240,13 +285,24 @@ export default function AboutUs() {
                     {OFFICE_LOCATIONS.houston.focus}
                   </p>
                 </div>
-                <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-slate-150 mt-4 bg-slate-100">
+                <div 
+                  onClick={() => enlargeImage('/pic16.jpg', 'Houston Liaison Offices & USA Procurement Desk', 'Main coordination office managing chemical manufacturers and regulatory compliance streams across North America.', 'USA DESK')}
+                  className="group relative aspect-video w-full overflow-hidden rounded-sm border border-slate-150 mt-4 bg-slate-100 cursor-zoom-in"
+                  title="Click to Zoom Photo"
+                >
                   <img
                     src="/pic16.jpg"
                     alt="Houston Liaison Offices & Global Procurement coordinator Desk"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-cover grayscale-[15%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                   />
+                  {/* Hover lens */}
+                  <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[9px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                      <Search className="w-3.5 h-3.5" />
+                      <span>Zoom</span>
+                    </div>
+                  </div>
                   <div className="absolute bottom-2 left-2 bg-slate-950/80 text-[8px] font-mono tracking-wider font-bold text-slate-300 px-2 py-0.5 rounded-sm shadow">
                     USA PROCUREMENT DESK
                   </div>
@@ -269,80 +325,124 @@ export default function AboutUs() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/IMG-20260523-WA0009.jpg', 'Hydrocarbon Process Pumps', 'Line pressure boost regulators managing dosing rates on process chemical streams at the Port Harcourt logistics base.', 'PROCESS EQUIPMENT')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/IMG-20260523-WA0009.jpg"
                   alt="Process Piping Columns"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   PH-ID // 01
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Hydrocarbon Process Pumps</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Hydrocarbon Process Pumps</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Line pressure boost regulators managing dosing rates on process chemical streams.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/IMG-20260523-WA0010.jpg', 'Polymer Storage Barrels', 'Sealed blue HDPE polymer liquid containment barrels strapped and stacked on standard shipping pallets.', 'STAGED INVENTORY')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/IMG-20260523-WA0010.jpg"
                   alt="Moisture Locked Drums Grid"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-305"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-305"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   PH-ID // 02
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Polymer Storage Barrels</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Polymer Storage Barrels</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Sealed blue HDPE polymer liquid containment barrels strapped and stacked on pallets.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/motion_photo_4933652164483028447.jpg', 'Piping Construction Site', 'Laying down and insulating structural steel pipeline ducts in high-consequence midstream runs.', 'INFRASTRUCTURE DEVELOPMENT')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/motion_photo_4933652164483028447.jpg"
                   alt="Midstream Pipeline Works"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   PH-ID // 03
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Piping Construction Site</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Piping Construction Site</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Laying down and insulating structural steel pipeline ducts in high-consequence midstream runs.
                 </p>
               </div>
             </div>
 
-            <div className="group space-y-3">
+            <div 
+              onClick={() => enlargeImage('/motion_photo_6215962379076297242.jpg', 'Freight Transport Loader', 'Heavy logistics multi-axle carrier drayage backing containers to shelter-covered loading depots in Port Harcourt.', 'TERMINAL LOGISTICS')}
+              className="group space-y-3 cursor-zoom-in"
+              title="Click to Zoom Image"
+            >
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
                 <img
                   src="/motion_photo_6215962379076297242.jpg"
                   alt="Terminal Loading Bins"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:scale-102 group-hover:grayscale-0 transition-all duration-300"
                 />
+                {/* Hover lens */}
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="bg-slate-900/90 text-orange-400 border border-orange-500/30 text-[8px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-xs flex items-center space-x-1 shadow-md">
+                    <Search className="w-3 h-3" />
+                    <span>Zoom</span>
+                  </div>
+                </div>
                 <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
                   PH-ID // 04
                 </span>
               </div>
               <div className="space-y-1">
-                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Freight Transport Loader</h5>
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100 group-hover:text-orange-400 transition-colors">Freight Transport Loader</h5>
                 <p className="text-[10px] text-slate-400 leading-normal font-light">
                   Heavy logistics multi-axle carrier drayage backing containers to shelter-covered loading depots.
                 </p>
