@@ -21,6 +21,7 @@ export default function Header({ activeTab, setActiveTab, onOpenQuickSearch }: H
     { id: 'about', label: 'About Us' },
     { id: 'products', label: 'Products' },
     { id: 'sectors', label: 'Industry Applications' },
+    { id: 'gallery', label: 'Operations & Gallery' },
     { id: 'procurement', label: 'Procurement Request' },
     { id: 'contact', label: 'Contact Desk' }
   ];
@@ -71,10 +72,10 @@ export default function Header({ activeTab, setActiveTab, onOpenQuickSearch }: H
                 <div className="w-2 sm:w-3 h-2 sm:h-3 bg-white rotate-45"></div>
               </div>
               <div>
-                <span className="block text-[11px] xs:text-xs sm:text-lg lg:text-xl font-black tracking-tighter uppercase text-slate-900 leading-none">
+                <span className="block text-[11px] sm:text-lg lg:text-xl font-black tracking-tighter uppercase text-slate-900 leading-none">
                   OILDROP <span className="text-orange-600">CHEMICAL</span>
                 </span>
-                <span className="block text-[6px] xs:text-[7px] sm:text-[8px] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-slate-500 font-bold font-mono mt-0.5 sm:mt-1 leading-none">
+                <span className="block text-[6px] sm:text-[8px] uppercase tracking-[0.1em] sm:tracking-[0.25em] text-slate-500 font-bold font-mono mt-0.5 sm:mt-1 leading-none">
                   Industrial Procurement & Distribution
                 </span>
               </div>

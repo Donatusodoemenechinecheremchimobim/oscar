@@ -190,6 +190,99 @@ export default function SectorsServed({ onSelectSectorProducts, onInitiateQuoteF
 
         </div>
 
+        {/* 4-Grid Asset Showcase Segment - Meet user request of 4 pics per page */}
+        <div className="bg-slate-900 border border-slate-800 rounded-sm p-6 sm:p-10 space-y-8 text-white mt-12 shadow-md font-sans">
+          <div className="border-b border-slate-800 pb-5">
+            <span className="text-[10px] font-bold tracking-[0.25em] text-orange-400 font-mono font-bold">FIELD EXTRACTION & TREATMENT SITES</span>
+            <h3 className="text-2xl font-black text-white font-display mt-1">Sourcing Asset Photo Log</h3>
+            <p className="text-slate-400 text-xs sm:text-sm font-light mt-1">
+              On-site capture showing active logistics lines, high pressure chemical piping headers, refinery columns, and treatment tanks supported by our procurement network.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/IMG-20260522-WA0000.jpg"
+                  alt="Offshore Drilling Wellhead"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  FLD-LGT // 01
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Offshore Drilling Rig</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Marine rigs operating in maritime exploration zones carrying deep wellheads.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/IMG-20260522-WA0001.jpg"
+                  alt="LNG Compressors Dehydration"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  FLD-LGT // 02
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Gas Dehydration Towers</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Molecular sieve and glycol contactors running midstream gas processing workflows.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/IMG-20260522-WA0002.jpg"
+                  alt="Refining Fractionation Column"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  FLD-LGT // 03
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Oil Refining Columns</h5>
+                <p className="text-[10px] text-slate-405 leading-normal font-light">
+                  High fraction towers and refinery vessels splitting petroleum raw feeds.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/filtration.jpg"
+                  alt="Clarifier Settlement Pool"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  FLD-LGT // 04
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Wastewater Clarifier Basin</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Flocculating and sedimentation basins running automated sludge-splitting cycles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

@@ -165,42 +165,42 @@ export const INDUSTRY_SECTORS: IndustrySector[] = [
     title: 'Oil & Gas Production and Processing',
     description: 'Supply of chemicals used in upstream, midstream, and downstream operations including gas processing, moisture control, and system protection.',
     processImpact: 'Prevents asset downtime, optimizes separation speed, and controls corrosion within pipelines and offshore installations.',
-    imageUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/IMG-20260522-WA0000.jpg'
   },
   {
     id: 'natural-gas-lng',
     title: 'Natural Gas Processing and LNG Systems',
     description: 'Support for gas dehydration, filtration, purification systems, and process stability applications in gas infrastructure and liquefaction terminals.',
     processImpact: 'Ensures water content standards are optimized to prevent freezing and downstream corrosion, maintaining pipeline purity and custody transport parameters.',
-    imageUrl: 'https://images.unsplash.com/photo-1542060748-10c28b629f6f?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/IMG-20260522-WA0001.jpg'
   },
   {
     id: 'petrochemical-refining',
     title: 'Petrochemical and Refining Operations',
     description: 'Supply of process chemicals used in refining operations, system maintenance, catalyst bed protections, and production stability processes.',
     processImpact: 'Minimizes catalyst poisoning, prevents heat exchanger biological fouling, and manages salt-cracking in high-temperature fractionations.',
-    imageUrl: 'https://images.unsplash.com/photo-1535732820275-9ffd998cac22?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/IMG-20260522-WA0002.jpg'
   },
   {
     id: 'water-treatment',
     title: 'Industrial Water Treatment Systems',
     description: 'Supply of treatment chemicals used in industrial water systems including coagulation, flocculation, filtration, demineralization, and disinfection.',
     processImpact: 'Safeguards cooling towers, regulates boiler feed streams to suppress scale, and ensures factory discharge meets governmental regulations.',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/filtration.jpg'
   },
   {
     id: 'manufacturing-process',
     title: 'Manufacturing and Process Industries',
     description: 'Supply of chemicals used in production processes, specialized machinery maintenance, thermal fluid loops, and operational maintenance.',
     processImpact: 'Maintains system heat exchange effectiveness, secures auxiliary process cooling, and prevents component corrosion.',
-    imageUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/pic5.jpg'
   },
   {
     id: 'environmental-waste',
     title: 'Environmental and Waste Treatment Systems',
     description: 'Chemical supply for wastewater treatment, sludge processing, dewatering cycles, and regulatory-compliant environmental remediation systems.',
     processImpact: 'Enhances suspended solids capture rates, assists sludge filtration density, and limits heavy metal dispersion in discharged effluents.',
-    imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9d39d66e8?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/san2.jpg'
   }
 ];
 

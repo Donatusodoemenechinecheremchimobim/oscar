@@ -42,6 +42,54 @@ export default function AboutUs() {
           </p>
         </div>
 
+        {/* Sourced Operational Assets Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm">
+            <img
+              src="/pic12.jpg"
+              alt="Quality Vetting Laboratory"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
+              <span className="text-[8px] font-mono font-extrabold tracking-widest text-orange-400 uppercase">STAGE 01 // SPECS ANALYSIS</span>
+              <h4 className="text-xs font-extrabold uppercase font-display tracking-wide">TDS Technical Feasibility Vetting</h4>
+              <p className="text-[9px] text-slate-400 font-light leading-snug">Vetting chemical structures, TDS certifications, and spec tolerances beforehand.</p>
+            </div>
+          </div>
+
+          <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm">
+            <img
+              src="/blue_pallet.jpg"
+              alt="Warehouse packaging pallets"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
+              <span className="text-[8px] font-mono font-extrabold tracking-widest text-orange-400 uppercase">STAGE 02 // STAGING</span>
+              <h4 className="text-xs font-extrabold uppercase font-display tracking-wide">Bulk Compound Warehousing</h4>
+              <p className="text-[9px] text-slate-400 font-light leading-snug">Cardboard fiber container loads staged and strapped tightly onto blue pallets.</p>
+            </div>
+          </div>
+
+          <div className="group relative aspect-[16/10] overflow-hidden rounded-sm border border-slate-200 bg-slate-100 shadow-sm">
+            <img
+              src="/filtration.jpg"
+              alt="Industrial filtration process water"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
+              <span className="text-[8px] font-mono font-extrabold tracking-widest text-orange-400 uppercase">STAGE 03 // DISPATCH</span>
+              <h4 className="text-xs font-extrabold uppercase font-display tracking-wide">Refining & Water Treatment Supply</h4>
+              <p className="text-[9px] text-slate-400 font-light leading-snug">Dehydration glycols and sand filtration medias shipped via secure containers.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Company Profile Main Segment */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
@@ -150,37 +198,156 @@ export default function AboutUs() {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
               
               {/* PH Desk */}
-              <div className="bg-white p-5 rounded-sm border border-slate-200 shadow-sm space-y-4">
-                <div className="flex justify-between items-start">
-                  <span className="bg-slate-100 text-slate-800 text-[10px] font-bold tracking-widest uppercase px-2.1 py-1 rounded-sm">PH HUBS</span>
-                  <MapPin className="text-slate-950 w-5 h-5" />
+              <div className="bg-white p-5 rounded-sm border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-start">
+                    <span className="bg-slate-100 text-slate-800 text-[10px] font-bold tracking-widest uppercase px-2.1 py-1 rounded-sm">PH HUBS</span>
+                    <MapPin className="text-slate-950 w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 font-display">{OFFICE_LOCATIONS.nigeria.title}</h4>
+                    <p className="text-xs text-slate-500 font-mono mt-0.5">{OFFICE_LOCATIONS.nigeria.address}</p>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-normal bg-slate-50 p-2.5 rounded-sm border border-slate-200">
+                    {OFFICE_LOCATIONS.nigeria.focus}
+                  </p>
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-900 font-display">{OFFICE_LOCATIONS.nigeria.title}</h4>
-                  <p className="text-xs text-slate-500 font-mono mt-0.5">{OFFICE_LOCATIONS.nigeria.address}</p>
+                <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-slate-150 mt-4 bg-slate-100">
+                  <img
+                    src="/pic1.jpg"
+                    alt="Port Harcourt Sourcing Hub & Terminal Logistics"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300"
+                  />
+                  <div className="absolute bottom-2 left-2 bg-slate-950/80 text-[8px] font-mono tracking-wider font-bold text-slate-300 px-2 py-0.5 rounded-sm shadow">
+                    PH LOGISTICS TERMINAL
+                  </div>
                 </div>
-                <p className="text-xs text-slate-600 leading-normal bg-slate-50 p-2.5 rounded-sm border border-slate-200">
-                  {OFFICE_LOCATIONS.nigeria.focus}
-                </p>
               </div>
 
               {/* Houston Desk */}
-              <div className="bg-white p-5 rounded-sm border border-slate-200 shadow-sm space-y-4">
-                <div className="flex justify-between items-start">
-                  <span className="bg-orange-50 text-orange-800 text-[10px] font-bold tracking-widest uppercase px-2.1 py-1 rounded-sm">TEXAS OFFICE</span>
-                  <Globe className="text-orange-600 w-5 h-5 animate-spin-slow" />
+              <div className="bg-white p-5 rounded-sm border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-start">
+                    <span className="bg-orange-50 text-orange-800 text-[10px] font-bold tracking-widest uppercase px-2.1 py-1 rounded-sm">TEXAS OFFICE</span>
+                    <Globe className="text-orange-600 w-5 h-5 animate-spin-slow" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 font-display">{OFFICE_LOCATIONS.houston.title}</h4>
+                    <p className="text-xs text-slate-500 font-mono mt-0.5">{OFFICE_LOCATIONS.houston.address}</p>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-normal bg-slate-50 p-2.5 rounded-sm border border-slate-200 font-sans">
+                    {OFFICE_LOCATIONS.houston.focus}
+                  </p>
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-900 font-display">{OFFICE_LOCATIONS.houston.title}</h4>
-                  <p className="text-xs text-slate-500 font-mono mt-0.5">{OFFICE_LOCATIONS.houston.address}</p>
+                <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-slate-150 mt-4 bg-slate-100">
+                  <img
+                    src="/pic16.jpg"
+                    alt="Houston Liaison Offices & Global Procurement coordinator Desk"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300"
+                  />
+                  <div className="absolute bottom-2 left-2 bg-slate-950/80 text-[8px] font-mono tracking-wider font-bold text-slate-300 px-2 py-0.5 rounded-sm shadow">
+                    USA PROCUREMENT DESK
+                  </div>
                 </div>
-                <p className="text-xs text-slate-600 leading-normal bg-slate-50 p-2.5 rounded-sm border border-slate-200 font-sans">
-                  {OFFICE_LOCATIONS.houston.focus}
-                </p>
               </div>
 
             </div>
 
+          </div>
+        </div>
+
+        {/* 4-Grid Asset Showcase Segment - Meet user request of 4 pics per page */}
+        <div className="bg-slate-900 border border-slate-800 rounded-sm p-6 sm:p-10 space-y-8 text-white mt-12 shadow-md">
+          <div className="border-b border-slate-800 pb-5">
+            <span className="text-[10px] font-bold tracking-[0.25em] text-orange-400 font-mono">FIELD OPERATIONAL LOGS</span>
+            <h3 className="text-2xl font-black text-white font-display mt-1">Verified Site Equipment Portfolio</h3>
+            <p className="text-slate-400 text-xs sm:text-sm font-light mt-1">
+              Photolog of core terminal dispatch lines, cargo containers, process pumps, and security polymer barrels handled in daily distribution loops.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/IMG-20260523-WA0009.jpg"
+                  alt="Process Piping Columns"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  PH-ID // 01
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Hydrocarbon Process Pumps</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Line pressure boost regulators managing dosing rates on process chemical streams.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/IMG-20260523-WA0010.jpg"
+                  alt="Moisture Locked Drums Grid"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-305"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  PH-ID // 02
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Polymer Storage Barrels</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Sealed blue HDPE polymer liquid containment barrels strapped and stacked on pallets.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/motion_photo_4933652164483028447.jpg"
+                  alt="Midstream Pipeline Works"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  PH-ID // 03
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Piping Construction Site</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Laying down and insulating structural steel pipeline ducts in high-consequence midstream runs.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/motion_photo_6215962379076297242.jpg"
+                  alt="Terminal Loading Bins"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  PH-ID // 04
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Freight Transport Loader</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Heavy logistics multi-axle carrier drayage backing containers to shelter-covered loading depots.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

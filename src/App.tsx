@@ -123,6 +123,12 @@ export default function App() {
           </div>
         )}
 
+        {activeTab === 'gallery' && (
+          <div className="animate-fade-in" id="view-gallery">
+            <SourcingGallery />
+          </div>
+        )}
+
         {activeTab === 'procurement' && (
           <div className="animate-fade-in" id="view-procurement">
             <QuotationSystem

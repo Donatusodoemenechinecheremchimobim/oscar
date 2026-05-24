@@ -291,7 +291,7 @@ export default function ProductCatalog({ initialCategoryId, onSelectProductForQu
           <div className="absolute top-0 right-0 w-48 h-48 bg-orange-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
           
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-            <div className="sm:col-span-8 space-y-2">
+            <div className="sm:col-span-8 space-y-2 col-description">
               <span className="text-orange-500 text-xs font-bold tracking-widest font-mono uppercase">Liaison Sourcing Active</span>
               <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight font-display">Need specific chemistry formulation or volumes?</h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed font-light">
@@ -306,6 +306,99 @@ export default function ProductCatalog({ initialCategoryId, onSelectProductForQu
               >
                 Launch Technical Inquiry
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* 4-Grid Asset Showcase Segment - Meet user request of 4 pics per page */}
+        <div className="bg-slate-900 border border-slate-800 rounded-sm p-6 sm:p-10 space-y-8 text-white mt-12 shadow-md">
+          <div className="border-b border-slate-800 pb-5">
+            <span className="text-[10px] font-bold tracking-[0.25em] text-orange-400 font-mono">WAREHOUSE INVENTORY & COMPOUND LOGGING</span>
+            <h3 className="text-2xl font-black text-white font-display mt-1">Staged Compound Reserves</h3>
+            <p className="text-slate-400 text-xs sm:text-sm font-light mt-1">
+              Field photography outlining desiccant molecular sieve stocks, secure container linings, process chemical barrels, and deep bed particulate filtration structures ready for transport.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/blue_pallet.jpg"
+                  alt="Packed Boxes on Blue Pallets"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  STK-VAL // 01
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Desiccant Bead Reserves</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Silica gas beads and molecular sieve units stored in moisture-locked cargo boxes.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/pic12.jpg"
+                  alt="Container logistics derrick"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  STK-VAL // 02
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Moisture-Locked Wraps</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Bulk compounds sealed tightly with heavy chemical shrink-wrapping layers prior to marine dispatch.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/pic13.jpg"
+                  alt="Industrial Blue Chemical Drums on Pallets"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  STK-VAL // 03
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Staged Liquid Polymers</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Liquid process coagulants and polymers arranged on pallets in general stockpiles.
+                </p>
+              </div>
+            </div>
+
+            <div className="group space-y-3">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-slate-800 bg-slate-950 shadow-sm">
+                <img
+                  src="/sand.jpg"
+                  alt="Piping filters installation"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="absolute bottom-2 left-2 bg-slate-950/90 text-orange-400 font-mono text-[8px] font-bold px-2 py-0.5 rounded-sm">
+                  STK-VAL // 04
+                </span>
+              </div>
+              <div className="space-y-1">
+                <h5 className="text-xs font-bold uppercase tracking-wider font-display text-slate-100">Deep-Bed Media Filters</h5>
+                <p className="text-[10px] text-slate-400 leading-normal font-light">
+                  Process manifolds and mechanical pumps regulating sand/anthracite bed filtration.
+                </p>
+              </div>
             </div>
           </div>
         </div>
